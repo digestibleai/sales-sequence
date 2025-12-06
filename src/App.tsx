@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import AdvancedResearch from "@/pages/advanced-research";
 import AutomationTools from "@/pages/automation-tools";
 import ChainOfThought from "@/pages/chain-of-thought";
+import ModelContextProtocol from "@/pages/model-context";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<AdvancedResearch />} />
           <Route path="/automation-tools" element={<AutomationTools />} />
           <Route path="/chain-of-thought" element={<ChainOfThought />} />
+          <Route path="/model-context-protocol" element={<ModelContextProtocol />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

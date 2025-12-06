@@ -486,10 +486,10 @@ export default function AdvancedResearch() {
             </h3>
 
             <div className="space-y-4 mb-8">
-              <Card className="p-6 text-left hover-elevate cursor-pointer bg-white border-2 border-border" data-testid="download-prompt-template">
+              <Card className="p-6 text-left hover-elevate cursor-pointer border-2 border-border" data-testid="download-prompt-template" style={{ backgroundColor: 'white' }}>
                 <div className="flex items-start gap-4">
-                  <div className="bg-card p-3 rounded-lg border border-border">
-                    <FileText className="w-6 h-6 text-foreground" />
+                  <div className="rounded-lg border border-border bg-card" style={{ padding: '8px' }}>
+                    <FileText />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-foreground mb-2" style={{ fontSize: '18px', lineHeight: '1.5' }}>
@@ -521,10 +521,10 @@ export default function AdvancedResearch() {
                 </div>
               </Card>
 
-              <Card className="p-6 text-left hover-elevate cursor-pointer bg-white border-2 border-border" data-testid="download-quick-reference">
+              <Card className="p-6 text-left hover-elevate cursor-pointer border-2 border-border" data-testid="download-quick-reference" style={{ backgroundColor: 'white' }}>
                 <div className="flex items-start gap-4">
-                  <div className="bg-card p-3 rounded-lg border border-border">
-                    <Lightbulb className="w-6 h-6 text-foreground" />
+                  <div className="rounded-lg border border-border bg-card" style={{ padding: '8px' }}>
+                    <Lightbulb />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-foreground mb-2" style={{ fontSize: '18px', lineHeight: '1.5' }}>
