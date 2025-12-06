@@ -704,7 +704,7 @@ export default function ModelContext() {
                 <h3 className="font-bold text-foreground mb-4" style={{ fontSize: '24px', lineHeight: '1.3' }}>
                   GOOGLE DRIVE CONNECTION
                 </h3>
-                
+
                 <div className="mb-4">
                   <strong className="font-bold text-foreground" style={{ fontSize: '16px' }}>What it does:</strong>
                   <p className="text-foreground" style={{ fontSize: '16px', lineHeight: '1.6' }}>Claude can read, search, and analyze your Google Drive files.</p>
@@ -733,7 +733,7 @@ export default function ModelContext() {
                 <h3 className="font-bold text-foreground mb-4" style={{ fontSize: '24px', lineHeight: '1.3' }}>
                   SLACK INTEGRATION
                 </h3>
-                
+
                 <div className="mb-4">
                   <strong className="font-bold text-foreground" style={{ fontSize: '16px' }}>What it does:</strong>
                   <p className="text-foreground" style={{ fontSize: '16px', lineHeight: '1.6' }}>Claude can read Slack channels and DMs (with permissions).</p>
@@ -762,7 +762,7 @@ export default function ModelContext() {
                 <h3 className="font-bold text-foreground mb-4" style={{ fontSize: '24px', lineHeight: '1.3' }}>
                   FILE SYSTEM ACCESS
                 </h3>
-                
+
                 <div className="mb-4">
                   <strong className="font-bold text-foreground" style={{ fontSize: '16px' }}>What it does:</strong>
                   <p className="text-foreground" style={{ fontSize: '16px', lineHeight: '1.6' }}>Claude can read and write files on your computer.</p>
@@ -791,7 +791,7 @@ export default function ModelContext() {
                 <h3 className="font-bold text-foreground mb-4" style={{ fontSize: '24px', lineHeight: '1.3' }}>
                   DATABASE CONNECTION
                 </h3>
-                
+
                 <div className="mb-4">
                   <strong className="font-bold text-foreground" style={{ fontSize: '16px' }}>What it does:</strong>
                   <p className="text-foreground" style={{ fontSize: '16px', lineHeight: '1.6' }}>Claude can query databases (Postgres, MySQL, SQLite, etc.)</p>
@@ -820,7 +820,7 @@ export default function ModelContext() {
                 <h3 className="font-bold text-foreground mb-4" style={{ fontSize: '24px', lineHeight: '1.3' }}>
                   WEB SCRAPING / API ACCESS
                 </h3>
-                
+
                 <div className="mb-4">
                   <strong className="font-bold text-foreground" style={{ fontSize: '16px' }}>What it does:</strong>
                   <p className="text-foreground" style={{ fontSize: '16px', lineHeight: '1.6' }}>Claude can fetch data from websites or APIs on demand.</p>
