@@ -6,6 +6,7 @@ import AutomationTools from "@/pages/automation-tools";
 import ChainOfThought from "@/pages/chain-of-thought";
 import ModelContextProtocol from "@/pages/model-context";
 import NotFound from "@/pages/not-found";
+import Projects from "@/pages/projects";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
       <Toaster />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AdvancedResearch />} />
+          <Route path="/advanced-research" element={<AdvancedResearch />} />
           <Route path="/automation-tools" element={<AutomationTools />} />
           <Route path="/chain-of-thought" element={<ChainOfThought />} />
           <Route path="/model-context-protocol" element={<ModelContextProtocol />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
