@@ -204,38 +204,40 @@ Think through each step carefully before moving to the next.
           aria-valuemin={1}
           aria-valuemax={4}
         >
-          {[1, 2, 3, 4].map((step, index) => (
-            <div key={step} className="flex items-center">
-              {/* Circle */}
-              <div
-                className={`
-                  w-10 h-10 sm:w-14 sm:h-14 rounded-full
-                  flex items-center justify-center
-                  text-lg sm:text-2xl transition-all duration-300
-                  ${step < currentScreen
-                    ? "bg-[#072D24] text-white font-bold border-0"
-                    : step === currentScreen
-                      ? "bg-[#A8D5B7] text-[#072D24] font-bold border-2 border-[#072D24]"
-                      : "bg-white text-[#6A7CA7] font-medium border-2 border-[#E6D8B3]"
-                  }
-                `}
-                style={{ fontFamily: 'Poppins' }}
-                data-testid={`progress-step-${step}`}
-              >
-                {step < currentScreen ? <Check className="w-4 h-4 sm:w-6 sm:h-6" /> : step}
-              </div>
+          {[1, 2, 3, 4].map((step, index) => {
+            const isCompleted = step < currentScreen;
+            const isActive = step === currentScreen;
+            const isUpcoming = step > currentScreen;
 
-              {/* Connector Line (don't render after last step) */}
-              {index < 3 && (
+            return (
+              <div key={step} className="flex items-center">
+                {/* Circle */}
                 <div
-                  className={`
-                    w-[40px] sm:w-[60px] h-0.5 transition-all duration-300
-                    ${step < currentScreen ? "bg-[#A8D5B7]" : "bg-[#E6D8B3]"}
-                  `}
-                />
-              )}
-            </div>
-          ))}
+                  className="flex items-center justify-center rounded-full transition-all duration-300 ease-in-out w-10 h-10 sm:w-14 sm:h-14 text-lg sm:text-2xl"
+                  style={{
+                    fontFamily: 'Poppins',
+                    backgroundColor: isCompleted ? '#072D24' : isActive ? '#A8D5B7' : '#FFFFFF',
+                    color: isCompleted ? '#FFFFFF' : isActive ? '#072D24' : '#6A7CA7',
+                    fontWeight: isCompleted || isActive ? 700 : 500,
+                    border: isActive ? '2px solid #072D24' : isUpcoming ? '2px solid #E6D8B3' : 'none'
+                  }}
+                  data-testid={`progress-step-${step}`}
+                >
+                  {isCompleted ? '✓' : step}
+                </div>
+
+                {/* Connector Line (don't render after last step) */}
+                {index < 3 && (
+                  <div
+                    className="h-0.5 w-10 sm:w-[60px] transition-all duration-300 ease-in-out"
+                    style={{
+                      backgroundColor: step < currentScreen ? '#A8D5B7' : '#E6D8B3'
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Screen 1: The Concept */}
@@ -530,16 +532,15 @@ Think through each step carefully before moving to the next.
               })}
             </div>
 
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto pt-4">
               <Button
                 onClick={() => setCurrentScreen(4)}
                 disabled={!isQuizComplete()}
-                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-10 font-bold disabled:bg-muted-foreground/40 disabled:cursor-not-allowed disabled:hover:bg-muted-foreground/40"
-                style={{ fontSize: '18px', paddingTop: '20px', paddingBottom: '20px' }}
-                data-testid="button-continue-3"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold px-10 py-5 rounded-lg min-h-[60px] disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
+                style={{ marginTop: '20px' }}
+                data-testid="button-next"
               >
-                See My Results
-                <ChevronRight className="ml-2 w-5 h-5" />
+                See My Results →
               </Button>
             </div>
           </div>
