@@ -216,7 +216,7 @@ function FlashCard({ card }: { card: { id: number; front: string; back: string }
   );
 }
 
-function TemplateCard({ template, copiedTemplate, onCopy }: { template: typeof templates[0]; copiedTemplate: string | null; onCopy: (id: string) => void }) {
+function TemplateCard({ template }: { template: typeof templates[0] }) {
   return (
     <div data-testid={`template-${template.id}`} style={{ backgroundColor: '#f5efe0', paddingBottom: '16px', borderRadius: '8px', borderLeft: '4px solid #072D24' }}>
       <div className="rounded-lg" style={{ padding: '16px', paddingBottom: '0px' }}>
@@ -613,8 +613,6 @@ export default function WhyChatGPTForgets() {
                 <div key={template.id} style={{ marginBottom: index < templates.length - 1 ? '24px' : '0' }}>
                   <TemplateCard
                     template={template}
-                    copiedTemplate={copiedTemplate}
-                    onCopy={(id) => copyToClipboard(template.code, id)}
                   />
                 </div>
               ))}
