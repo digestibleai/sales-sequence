@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Copy, Check, ChevronRight, CheckCircle2, XCircle, PartyPopper, User, FileText, Target, Mail, Calendar, Pencil, Search, Lightbulb, BarChart3, PenTool, ListTodo, MessageSquare, RefreshCw } from "lucide-react";
+import { ChevronRight, CheckCircle2, XCircle, PartyPopper, User, FileText, Target, Mail, Calendar, Pencil, Search, Lightbulb, BarChart3, PenTool, ListTodo, MessageSquare, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
 
 type Screen = 1 | 2 | 3 | 4;
 
@@ -206,19 +205,6 @@ function FlashCard({ card, index }: { card: { front: string; back: string }; ind
 }
 
 function CodeBlock({ title, code, icon: Icon }: { title: string; code: string; icon: typeof Mail }) {
-  const [copied, setCopied] = useState(false);
-  const { toast } = useToast();
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(code);
-    setCopied(true);
-    toast({
-      title: "Copied to clipboard!",
-      description: "Prompt copied successfully",
-    });
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <div className="relative">
       <div className="bg-[#072d24] text-white rounded-lg p-6 pr-14">

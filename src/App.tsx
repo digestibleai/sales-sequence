@@ -8,6 +8,7 @@ import ModelContextProtocol from "@/pages/model-context";
 import NotFound from "@/pages/not-found";
 import Projects from "@/pages/projects";
 import WhyAIIsntGoogle from "@/pages/why-ai-isnt-google";
+import WhyChatGPTForgets from "./pages/why-chatgpt-forgets";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/model-context-protocol" element={<ModelContextProtocol />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/why-ai-isnt-google" element={<WhyAIIsntGoogle />} />
+          <Route path="/why-chatgpt-forgets" element={<WhyChatGPTForgets />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
