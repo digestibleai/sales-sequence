@@ -140,6 +140,18 @@ body {
   max-width: 72rem;
 }
 
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
 .max-w-\[400px\] {
   max-width: 400px;
 }
@@ -235,6 +247,11 @@ body {
   padding-right: 2rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -243,6 +260,16 @@ body {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-8 {
@@ -275,6 +302,22 @@ body {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .gap-4 {
@@ -414,6 +457,11 @@ body {
 }
 
 /* Custom font sizes with specific line heights */
+.text-\[48px\] {
+  font-size: 48px;
+  line-height: 1.15;
+}
+
 .text-48 {
   font-size: 48px;
   line-height: 1.15;
@@ -571,12 +619,28 @@ body {
   width: 3.5rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-15 {
   width: 3.75rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-9 {
   height: 2.25rem;
+}
+
+.h-0\.5 {
+  height: 0.125rem;
+}
+
+.min-h-\[60px\] {
+  min-height: 60px;
 }
 
 .w-9 {
@@ -776,6 +840,14 @@ body {
   line-height: 1.15;
 }
 
+.leading-\[1\.15\] {
+  line-height: 1.15;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -804,6 +876,11 @@ body {
 .border-t-2 {
   border-top-width: 2px;
   border-top-style: solid;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 }
 
 .border-l-4 {
@@ -855,6 +932,10 @@ body {
     width: 3.75rem;
   }
   
+  .sm\:w-\[60px\] {
+    width: 60px;
+  }
+  
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -878,6 +959,19 @@ body {
   }
 }
 
+/* List styles */
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
 /* Animations */
 @keyframes fade-in {
   from {
@@ -894,4 +988,117 @@ body {
 
 .fade-in {
   animation: fade-in 0.5s ease-in-out;
+}
+
+/* Focus styles */
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring-2:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.focus\:ring-primary:focus {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.focus\:ring-offset-2:focus {
+  outline-offset: 2px;
+}
+
+/* Transform utilities */
+.hover\:-translate-y-0\.5:hover {
+  transform: translateY(-0.125rem);
+}
+
+/* Quiz option colors */
+.bg-green-50 {
+  background-color: rgb(240, 253, 244);
+}
+
+.bg-red-50 {
+  background-color: rgb(254, 242, 242);
+}
+
+.border-green-500 {
+  border-color: rgb(34, 197, 94);
+}
+
+.border-red-500 {
+  border-color: rgb(239, 68, 68);
+}
+
+/* Inline color classes */
+.bg-\[#F5EFE0\] {
+  background-color: #F5EFE0;
+}
+
+.border-\[#E6D8B3\] {
+  border-color: #E6D8B3;
+}
+
+.bg-\[#A8D5B7\] {
+  background-color: #A8D5B7;
+}
+
+.bg-\[#FEF2F2\] {
+  background-color: #FEF2F2;
+}
+
+.border-l-\[#072D24\] {
+  border-left-color: #072D24;
+}
+
+.border-l-\[#DC2626\] {
+  border-left-color: #DC2626;
+}
+
+.text-\[#072D24\] {
+  color: #072D24;
+}
+
+.text-\[#DC2626\] {
+  color: #DC2626;
+}
+
+.text-\[#991B1B\] {
+  color: #991B1B;
+}
+
+.bg-\[#072D24\] {
+  background-color: #072D24;
+}
+
+.bg-\[#A8D5B7\] {
+  background-color: #A8D5B7;
+}
+
+.bg-\[#E6D8B3\] {
+  background-color: #E6D8B3;
+}
+
+.text-\[#6A7CA7\] {
+  color: #6A7CA7;
+}
+
+/* Disabled states */
+.disabled\:bg-muted-foreground\/40:disabled {
+  background-color: hsl(var(--muted-foreground) / 0.4);
+}
+
+.disabled\:cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+
+.disabled\:hover\:bg-muted-foreground\/40:disabled:hover {
+  background-color: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* Padding utilities */
+.py-\[18px\] {
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
