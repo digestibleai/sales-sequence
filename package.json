@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://digestibleai.github.io/sales-sequence",
+  "homepage": "https://digestibleai.github.io/sales-sequence/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
