@@ -362,6 +362,10 @@ body {
   border-color: transparent;
 }
 
+.border-border {
+  border-color: var(--border);
+}
+
 .bg-white {
   background-color: white;
 }
@@ -456,6 +460,48 @@ body {
   font-weight: 700;
 }
 
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Prose styles (simplified) */
+.prose {
+  max-width: 65ch;
+}
+
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.prose-lg p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-lg h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.prose-lg ul {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-lg li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.max-w-none {
+  max-width: none;
+}
+
 /* Custom font sizes with specific line heights */
 .text-\[48px\] {
   font-size: 48px;
@@ -515,6 +561,10 @@ body {
   background-color: rgb(249, 250, 251);
 }
 
+.bg-gray-300 {
+  background-color: rgb(209, 213, 219);
+}
+
 .shadow-sm {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
@@ -547,6 +597,10 @@ body {
   transition-duration: 500ms;
 }
 
+.duration-\[600ms\] {
+  transition-duration: 600ms;
+}
+
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -569,6 +623,10 @@ body {
 
 .space-y-4 > * + * {
   margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
 }
 
 .inline-flex {
@@ -883,6 +941,14 @@ body {
   border-bottom-style: solid;
 }
 
+.border-0 {
+  border-width: 0;
+}
+
+.border-l-primary {
+  border-left-color: var(--primary);
+}
+
 .border-l-4 {
   border-left-width: 4px;
   border-left-style: solid;
@@ -944,6 +1010,11 @@ body {
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+  
+  .md\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   
   .md\:grid-cols-2 {
@@ -1078,6 +1149,26 @@ body {
 
 .bg-\[#E6D8B3\] {
   background-color: #E6D8B3;
+}
+
+.bg-\[#072d24\] {
+  background-color: #072d24;
+}
+
+.bg-\[#0a3d30\] {
+  background-color: #0a3d30;
+}
+
+.bg-\[#FFE5E5\] {
+  background-color: #FFE5E5;
+}
+
+.bg-\[#072d24\]\/8 {
+  background-color: rgba(7, 45, 36, 0.08);
+}
+
+.bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .text-\[#6A7CA7\] {

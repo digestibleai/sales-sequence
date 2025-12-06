@@ -74,52 +74,48 @@ const quizQuestions: QuizQuestion[] = [
 function Flashcard({ data, index }: { data: FlashcardData; index: number }) {
   const [flipped, setFlipped] = useState(false);
 
-  const handleFlip = () => setFlipped(!flipped);
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handleFlip();
-    }
+  const toggleFlipCard = () => {
+    setFlipped(!flipped);
   };
 
   return (
-    <button
-      onClick={handleFlip}
-      onKeyDown={handleKeyPress}
-      className="relative w-full h-64 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
-      style={{ perspective: "1000px" }}
+    <div
+      onClick={toggleFlipCard}
+      className="h-64 cursor-pointer perspective-1000"
       data-testid={`flashcard-${index}`}
-      aria-label={`Flashcard ${index + 1}: ${flipped ? 'showing answer' : 'showing question'}`}
     >
       <div
-        className="relative w-full h-full transition-transform duration-500"
-        style={{
-          transformStyle: "preserve-3d",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)"
-        }}
+        className={`relative w-full h-full transition-transform duration-[600ms] ease-in-out transform-style-3d ${flipped ? "rotate-y-180" : ""
+          }`}
+        style={{ transformStyle: "preserve-3d" }}
       >
-        <div
-          className="absolute w-full h-full p-6 flex items-center justify-center text-center bg-white border-2 border-border rounded-lg shadow-sm hover:-translate-y-0.5 transition-transform duration-300"
-          style={{ backfaceVisibility: "hidden" }}
+        {/* Front */}
+        <Card
+          className={`absolute w-full h-full flex items-center justify-center p-6 backface-hidden border-2 bg-card ${flipped ? "opacity-0" : "opacity-100"
+            }`}
+          style={{ backfaceVisibility: "hidden", borderColor: 'var(--border)' }}
         >
-          <div>
-            <p className="text-base font-normal leading-relaxed">{data.front}</p>
-          </div>
-        </div>
-        <div
-          className="absolute w-full h-full p-6 flex items-center justify-center text-center bg-white border-2 border-border rounded-lg shadow-sm"
+          <p className="text-base font-medium text-center text-foreground">
+            {data.front}
+          </p>
+        </Card>
+
+        {/* Back */}
+        <Card
+          className={`absolute w-full h-full flex items-center justify-center p-6 backface-hidden border-2 bg-card ${flipped ? "opacity-100" : "opacity-0"
+            }`}
           style={{
             backfaceVisibility: "hidden",
-            transform: "rotateY(180deg)"
+            transform: "rotateY(180deg)",
+            borderColor: 'var(--border)'
           }}
         >
-          <div>
-            <p className="text-base font-normal leading-relaxed">{data.back}</p>
-          </div>
-        </div>
+          <p className="text-base text-center text-foreground leading-relaxed">
+            {data.back}
+          </p>
+        </Card>
       </div>
-    </button>
+    </div>
   );
 }
 
@@ -184,14 +180,13 @@ function ProgressIndicator({ currentScreen }: { currentScreen: number }) {
           <div key={step} className="flex items-center">
             {/* Circle */}
             <div
-              className={`flex items-center justify-center rounded-full transition-all duration-300 ease-in-out
-                w-10 h-10 sm:w-14 sm:h-14 text-lg sm:text-2xl
-                ${isCompleted ? 'bg-[#072D24] text-white font-bold' : ''}
-                ${isActive ? 'bg-[#A8D5B7] text-[#072D24] border-2 border-[#072D24] font-bold' : ''}
-                ${isUpcoming ? 'bg-white text-[#6A7CA7] border-2 border-[#E6D8B3] font-medium' : ''}
-              `}
+              className="flex items-center justify-center rounded-full transition-all duration-300 ease-in-out w-10 h-10 sm:w-14 sm:h-14 text-lg sm:text-2xl"
               style={{
-                fontFamily: 'Poppins'
+                fontFamily: 'Poppins',
+                backgroundColor: isCompleted ? '#072D24' : isActive ? '#A8D5B7' : '#FFFFFF',
+                color: isCompleted ? '#FFFFFF' : isActive ? '#072D24' : '#6A7CA7',
+                fontWeight: isCompleted || isActive ? 700 : 500,
+                border: isActive ? '2px solid #072D24' : isUpcoming ? '2px solid #E6D8B3' : 'none'
               }}
               data-testid={`progress-step-${step}`}
             >
@@ -201,9 +196,10 @@ function ProgressIndicator({ currentScreen }: { currentScreen: number }) {
             {/* Connector Line (don't render after last step) */}
             {index < steps.length - 1 && (
               <div
-                className={`h-0.5 w-10 sm:w-[60px] transition-all duration-300 ease-in-out
-                  ${step < currentScreen ? 'bg-[#A8D5B7]' : 'bg-[#E6D8B3]'}
-                `}
+                className="h-0.5 w-10 sm:w-[60px] transition-all duration-300 ease-in-out"
+                style={{
+                  backgroundColor: step < currentScreen ? '#A8D5B7' : '#E6D8B3'
+                }}
               />
             )}
           </div>
@@ -243,7 +239,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
         </ol>
         <p>That's what automation tools do. And they're way simpler than you think.</p>
 
-        <div className="border-b-2 border-dashed border-border my-8 pb-8">
+        <div className="my-8 pb-8" style={{ borderBottomWidth: '2px', borderBottomStyle: 'dashed', borderColor: 'var(--border)' }}>
           <h2 className="text-4xl font-bold mb-4 text-foreground">What Are Zapier and Make?</h2>
           <p>
             Think of them as connectors between your apps.
@@ -263,7 +259,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           </p>
         </div>
 
-        <div className="border-b-2 border-dashed border-border my-8 pb-8">
+        <div className="my-8 pb-8" style={{ borderBottomWidth: '2px', borderBottomStyle: 'dashed', borderColor: 'var(--border)' }}>
           <h2 className="text-4xl font-bold mb-4 text-foreground">Why This Matters</h2>
           <p>
             Most people think AI is impressive because it can write or analyze things.
@@ -286,7 +282,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           </p>
         </div>
 
-        <div className="border-b-2 border-dashed border-border my-8 pb-8">
+        <div className="my-8 pb-8" style={{ borderBottomWidth: '2px', borderBottomStyle: 'dashed', borderColor: 'var(--border)' }}>
           <h2 className="text-4xl font-bold mb-4 text-foreground">'But Isn't This Hard To Learn?'</h2>
           <p>
             Here's the secret nobody tells you: <strong>it's easier than people make it out to be.</strong>
@@ -314,7 +310,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           </p>
         </div>
 
-        <div className="border-b-2 border-dashed border-border my-8 pb-8">
+        <div className="my-8 pb-8" style={{ borderBottomWidth: '2px', borderBottomStyle: 'dashed', borderColor: 'var(--border)' }}>
           <h2 className="text-4xl font-bold mb-4 text-foreground">The Actual Future of Work</h2>
           <p>Here's where this is going:</p>
           <p className="mt-3">Right now, AI is a tool you use.</p>
@@ -363,6 +359,7 @@ function Screen2({ onNext }: { onNext: () => void }) {
         <Button
           onClick={onNext}
           className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold px-10 py-5 rounded-lg min-h-[60px]"
+          style={{ marginTop: '20px' }}
           data-testid="button-next"
         >
           Test Your Knowledge →
@@ -425,24 +422,32 @@ function Screen3({ onNext }: { onNext: (score: number) => void }) {
             </div>
             {showFeedback[qIndex] && (
               <div
-                className={`p-5 rounded-lg ${answers[qIndex] === quiz.correct
-                  ? "bg-[#A8D5B7] border-l-4 border-l-[#072D24]"
-                  : "bg-[#FEF2F2] border-l-4 border-l-[#DC2626]"
-                  }`}
                 role="alert"
                 aria-live="polite"
+                className="rounded-lg mb-6"
+                style={{
+                  padding: '24px',
+                  background: answers[qIndex] === quiz.correct ? '#A8D5B7' : '#FEF2F2',
+                  borderLeft: answers[qIndex] === quiz.correct ? '4px solid #072D24' : '4px solid #DC2626',
+                  borderTop: answers[qIndex] === quiz.correct ? '2px solid #072D24' : '2px solid #DC2626',
+                  borderRight: answers[qIndex] === quiz.correct ? '2px solid #072D24' : '2px solid #DC2626',
+                  borderBottom: answers[qIndex] === quiz.correct ? '2px solid #072D24' : '2px solid #DC2626',
+                  color: answers[qIndex] === quiz.correct ? '#072D24' : '#991B1B'
+                }}
                 data-testid={`feedback-${qIndex}`}
               >
-                <p className={`font-bold mb-2 ${answers[qIndex] === quiz.correct
-                  ? "text-[#072D24]"
-                  : "text-[#DC2626]"
-                  }`}>
+                <p style={{
+                  fontSize: '16px',
+                  lineHeight: '1.6',
+                  fontWeight: 600,
+                  marginBottom: '8px'
+                }}>
                   {answers[qIndex] === quiz.correct ? "✓ Correct!" : "✗ Not quite."}
                 </p>
-                <p className={`${answers[qIndex] === quiz.correct
-                  ? "text-[#072D24]"
-                  : "text-[#991B1B]"
-                  }`}>
+                <p style={{
+                  fontSize: '16px',
+                  lineHeight: '1.6'
+                }}>
                   {quiz.feedback}
                 </p>
               </div>
@@ -455,7 +460,8 @@ function Screen3({ onNext }: { onNext: (score: number) => void }) {
         <Button
           onClick={() => onNext(score)}
           disabled={!allAnswered}
-          className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold px-10 py-5 rounded-lg min-h-[60px] disabled:bg-muted-foreground/40 disabled:cursor-not-allowed disabled:hover:bg-muted-foreground/40"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold px-10 py-5 rounded-lg min-h-[60px] disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed disabled:hover:bg-gray-300"
+          style={{ marginTop: '20px' }}
           data-testid="button-next"
         >
           See My Results →
