@@ -22,7 +22,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/why-ai-isnt-google" element={<WhyAIIsntGoogle />} />
         <Route path="/why-chatgpt-forgets" element={<WhyChatGPTForgets />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<WhyAIIsntGoogle />} />
       </Routes>
     </TooltipProvider>
   );
