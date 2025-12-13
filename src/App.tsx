@@ -5,7 +5,6 @@ import AdvancedResearch from "@/pages/advanced-research";
 import AutomationTools from "@/pages/automation-tools";
 import ChainOfThought from "@/pages/chain-of-thought";
 import ModelContextProtocol from "@/pages/model-context";
-import NotFound from "@/pages/not-found";
 import Projects from "@/pages/projects";
 import WhyAIIsntGoogle from "@/pages/why-ai-isnt-google";
 import WhyChatGPTForgets from "./pages/why-chatgpt-forgets";
