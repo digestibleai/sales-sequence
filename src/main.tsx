@@ -29,6 +29,15 @@ import App from './App.tsx'
 //   }
 // }
 
+const routePath = window.location.pathname;
+
+const isAssetRequest = routePath.includes('/assets/') ||
+  routePath.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|map|webp|avif)$/i);
+
+if (!window.location.hash && routePath !== "/" && routePath.startsWith('/') && !isAssetRequest) {
+  window.location.replace(`/#${routePath}`);
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>
