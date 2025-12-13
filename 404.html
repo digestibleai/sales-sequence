@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages 404.html fallback for SPA routing
+      // This should only handle route requests, not asset requests
+      // Asset requests that hit 404 should fail normally (not redirect)
+      const path = window.location.pathname;
+      const base = '/sales-sequence/';
+      
+      // Only redirect if this looks like a route (not an asset file)
+      const isAssetRequest = path.includes('/assets/') || 
+                            path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|map)$/i);
+      
+      if (!isAssetRequest) {
+        // If path starts with base, redirect to hash version
+        if (path.startsWith(base)) {
+          const routePath = path.slice(base.length - 1);
+          if (routePath && routePath !== '/') {
+            window.location.replace(`/#${routePath}`);
+          } else {
+            window.location.replace('/#/');
+          }
+        } else if (path !== '/' && path !== base) {
+          window.location.replace(`/#${path}`);
+        } else {
+          window.location.replace('/#/');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
+
