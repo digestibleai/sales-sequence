@@ -1,0 +1,129 @@
+.content-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.content-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Content preview specific paragraph styling */
+.content-preview-headline {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.content-preview-body-text {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.content-preview-body-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .content-preview-container {
+    gap: 20px;
+    text-align: center;
+    padding: 20px 20px 0 20px;
+  }
+  
+  .content-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .headline-section {
+    order: 1;
+  }
+  
+  .image-section {
+    order: 2;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .button-section {
+    order: 3;
+  }
+  
+  .content-preview-headline {
+    font-size: 32px !important;
+    line-height: 1.2;
+    margin-bottom: 20px !important;
+  }
+  
+  .content-preview-body-text {
+    font-size: 18px !important;
+    line-height: 1.4;
+    margin-bottom: 20px !important;
+  }
+  
+  .content-preview-body-text:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-preview-container {
+    gap: 16px;
+    padding: 20px 16px 0 16px;
+  }
+  
+  .content-row {
+    gap: 20px;
+  }
+  
+  .content-preview-headline {
+    font-size: 28px !important;
+    line-height: 1.1;
+    margin-bottom: 16px !important;
+  }
+  
+  .content-preview-body-text {
+    font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 16px !important;
+  }
+  
+  .content-preview-body-text:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .image-section {
+    max-width: 250px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .content-preview-headline {
+    font-size: 24px !important;
+  }
+  
+  .content-preview-body-text {
+    font-size: 14px !important;
+  }
+}

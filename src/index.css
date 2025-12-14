@@ -1193,3 +1193,43 @@ body {
   padding-top: 18px;
   padding-bottom: 18px;
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  :root {
+    padding: 16px;
+  }
+  
+  body {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    padding: 12px;
+  }
+}
+
+/* Prevent zoom on input focus for mobile */
+@media screen and (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Improve touch targets */
+@media (max-width: 768px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Smooth scrolling for mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}

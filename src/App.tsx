@@ -8,6 +8,7 @@ import ModelContextProtocol from "@/pages/model-context";
 import Projects from "@/pages/projects";
 import WhyAIIsntGoogle from "@/pages/why-ai-isnt-google";
 import WhyChatGPTForgets from "./pages/why-chatgpt-forgets";
+import { PreCheckoutOnboarding } from "./pages/pre-checkout-onboarding";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/why-ai-isnt-google" element={<WhyAIIsntGoogle />} />
         <Route path="/why-chatgpt-forgets" element={<WhyChatGPTForgets />} />
+        <Route path="/pre-checkout-onboarding" element={<PreCheckoutOnboarding />} /> // special route for the pre-checkout onboarding
         <Route path="*" element={<WhyAIIsntGoogle />} />
       </Routes>
     </TooltipProvider>

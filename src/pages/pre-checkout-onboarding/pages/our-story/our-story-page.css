@@ -1,0 +1,125 @@
+.our-story-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.story-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  order: 3;
+}
+
+.story-image-section img {
+  max-width: 100%;
+  max-height: 100vh;
+  height: auto;
+  object-fit: contain;
+}
+
+.story-headline-section {
+  width: 100%;
+  text-align: center;
+}
+
+.content-section {
+  order: 2;
+}
+
+.button-section {
+  order: 4;
+}
+
+/* Our story specific paragraph styling */
+.our-story-headline {
+  font-size: 48px;
+}
+
+.our-story-body-text {
+  font-size: 16px;
+  text-align: center;
+}
+
+.our-story-body-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .our-story-container {
+    gap: 20px;
+    text-align: center;
+    padding: 20px 20px 0 20px;
+  }
+  
+  .story-headline-section {
+    order: 1;
+  }
+  
+  .story-image-section {
+    order: 3;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  
+  .our-story-headline {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+  
+  .our-story-body-text {
+    order: 2;
+    font-size: 18px !important;
+    line-height: 1.4;
+  }
+  
+  .our-story-body-text:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-story-container {
+    display: flex;
+    gap: 16px;
+    padding: 20px 16px 0 16px;
+  }
+  
+  .our-story-headline {
+    font-size: 28px !important;
+    line-height: 1.1;
+    margin-bottom: 16px !important;
+  }
+  
+  .our-story-body-text {
+    font-size: 16px !important;
+    line-height: 1.4;
+    order: 2;
+  }
+  
+  .our-story-body-text:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .image-section {
+    max-width: 300px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .our-story-headline {
+    font-size: 24px !important;
+  }
+  
+  .our-story-body-text {
+    font-size: 14px !important;
+  }
+}

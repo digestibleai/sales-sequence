@@ -1,0 +1,141 @@
+.social-proof-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.social-proof-content-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.headline-section {
+  flex: 1;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Social proof specific paragraph styling */
+.social-proof-headline {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.social-proof-body-text {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.social-proof-body-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .social-proof-container {
+    gap: 20px;
+    text-align: center;
+    padding: 20px 20px 0 20px;
+  }
+  
+  .social-proof-content-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .headline-section {
+    order: 1;
+  }
+  
+  .image-section {
+    order: 2;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .button-section {
+    order: 3;
+  }
+  
+  .social-proof-headline {
+    font-size: 32px !important;
+    line-height: 1.2;
+    margin-bottom: 20px !important;
+  }
+  
+  .social-proof-body-text {
+    font-size: 18px !important;
+    line-height: 1.4;
+    margin-bottom: 20px !important;
+  }
+  
+  .social-proof-body-text:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-proof-container {
+    gap: 16px;
+    padding: 20px 16px 0 16px;
+  }
+  
+  .social-proof-content-row {
+    gap: 20px;
+  }
+  
+  .social-proof-headline {
+    font-size: 28px !important;
+    line-height: 1.1;
+    margin-bottom: 16px !important;
+  }
+  
+  .social-proof-body-text {
+    font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 16px !important;
+  }
+  
+  .social-proof-body-text:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .image-section {
+    max-width: 250px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .social-proof-headline {
+    font-size: 24px !important;
+  }
+  
+  .social-proof-body-text {
+    font-size: 14px !important;
+  }
+}
